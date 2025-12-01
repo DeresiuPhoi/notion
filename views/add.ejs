@@ -1,0 +1,14 @@
+<%- include('./partials/header'); -%>
+    <div class="main-block">
+      <form action="/add"  method = "post">
+        <div class="info">
+          <input class="isbn" type="text" name="isbn" placeholder="ISBN">
+          <input type="text" name="title" placeholder="Name of the Book">
+          <label for="note">Your Notes:</label>
+          <textarea id="note" name="note" rows="4" cols="50" placeholder = "Note"></textarea>
+        </div>
+        <button type="submit" href="/add">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
