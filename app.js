@@ -19,6 +19,7 @@ const db = new pg.Client({
 });
 db.connect();
 
+
 app.get("/", async (req, res) => {
   try {
     const result = await db.query("SELECT * FROM notion"); // columns: id, isbn, title, note
@@ -55,6 +56,19 @@ app.get("/update", (req, res) => {
 app.get("/about", (req, res) => {
   res.render("add_note.ejs");
 });
+
+app.delete("/delete/:id", async (req, res) => {
+  const id = req.params.id;
+  try {
+    await db.query("DELETE FROM notion WHERE id = $1;", [id]);
+    console.log("notion deleted");
+    res.sendStatus(200);
+  } catch (err) {
+    console.error(err);
+    res.sendStatus(500);
+  }
+});
+
 
 
 // app.post("/submit", (req, res) => {
