@@ -17,7 +17,7 @@
               <p class="card-text"><%= notions[i].note %></p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary"><a href="/update/<%= notions[i].id %>">Edit</a></button>
                   <button class="btn btn-sm btn-outline-secondary delete-btn" data-id="<%= notions[i].id %>">Delete</button>
                 </div>
                 <small class="text-body-secondary">ID: <%= notions[i].id %></small>

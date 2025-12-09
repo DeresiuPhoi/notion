@@ -49,13 +49,41 @@ app.post("/add", async(req,res)=>{
   }
 })
 
-app.get("/update", (req, res) => {
-  res.render("add_note.ejs");
-});
-
 app.get("/about", (req, res) => {
   res.render("add_note.ejs");
 });
+
+app.get("/update/:id", async(req,res)=>{
+  const id = parseInt(req.params.id);
+  try {
+    const result = await db.query("SELECT * FROM notion WHERE id = $1", [id]);
+    res.render("update.ejs", { note: result.rows[0] });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Database error");
+  }
+  
+})
+
+app.post("/update/:id", async (req, res) => {
+  const id = parseInt(req.params.id);
+  const isbn = req.body["isbn"];
+  const title = req.body["title"];
+  const note = req.body["note"];
+
+  try {
+    await db.query(
+      "UPDATE notion SET isbn = $1, title = $2, note = $3 WHERE id = $4",
+      [isbn, title, note, id]
+    );
+    console.log("notion updated");
+    res.redirect("/");
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Database error");
+  }
+});
+
 
 app.delete("/delete/:id", async (req, res) => {
   const id = req.params.id;
