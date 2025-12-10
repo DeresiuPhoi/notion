@@ -42,6 +42,29 @@ This is a small pet project created to practice:
 - responsive UI with Bootstrap;  
 - integrating an external book cover service using ISBN.
 
+## Installation and running
+
+1. Clone the repository:
+git clone https://github.com/DeresiuPhoi/notion.git
+cd notion
+
+
+2. Install dependencies:
+npm install
+
+3. Create a `.env` file if needed (for example, to configure the port):
+PORT=3000
+
+4. Start the app:
+npm start
+or, if you have a dev script:
+npm run dev
+
+
+5. Open the app in your browser:
+http://localhost:3000
+
+
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/81003d74-bde8-4a7a-944e-0323591fe467" />
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/7c3611f3-4231-4a4c-af5f-142ec2fad2e5" />
 <img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/e0904c22-c232-4019-9581-597c8b826c4f" />
