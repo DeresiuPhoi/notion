@@ -49,6 +49,18 @@ app.post("/add", async(req,res)=>{
   }
 })
 
+app.get("/view/:id",async (req,res)=>{
+  const id = parseInt(req.params.id);
+  try {
+    const result = await db.query("SELECT * FROM notion WHERE id = $1", [id]);
+    res.render("view.ejs", { note: result.rows[0] });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Database error");
+  }
+  
+})
+
 app.get("/about", (req, res) => {
   res.render("about.ejs");
 });

@@ -22,16 +22,63 @@
             </ul>
         </header>
     </div>
-    <div class="main-block">
-      <form action="/add"  method = "post">
-        <div class="info">
-          <input class="isbn" type="text" name="isbn" placeholder="ISBN">
-          <input type="text" name="title" placeholder="Name of the Book">
-          <label for="note">Your Notes:</label>
-          <textarea id="note" name="note" rows="4" cols="50" placeholder = "Note"></textarea>
+
+    <main class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8">
+                <div class="card shadow-sm mb-5">
+                    <div class="card-body">
+                        <h1 class="h4 mb-3">Add a new note</h1>
+                        <p class="text-muted mb-4">
+                            Enter the book’s ISBN, its title and your notes. You will see the cover on the main page if the ISBN is valid.
+                        </p>
+
+                        <form action="/add" method="post">
+                            <div class="mb-3">
+                                <label for="isbn" class="form-label">ISBN</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="isbn"
+                                    name="isbn"
+                                    placeholder="978…"
+                                    required
+                                >
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="title" class="form-label">Book title</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="title"
+                                    name="title"
+                                    placeholder="Name of the book"
+                                    required
+                                >
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="note" class="form-label">Your notes</label>
+                                <textarea
+                                    class="form-control"
+                                    id="note"
+                                    name="note"
+                                    rows="5"
+                                    placeholder="What did you think about this book? Your highlights, quotes, thoughts…"
+                                ></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100">
+                                Save note
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-        <button type="submit" href="/add">Submit</button>
-      </form>
-    </div>
-  </body>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-Iu7rLq71lJZIe0xOrE7wBtOxfMhJzT2CPYqvZ1qLwoCydK4sqGJcGf7Sx0QK8z+4" crossorigin="anonymous"></script>
+</body>
 </html>

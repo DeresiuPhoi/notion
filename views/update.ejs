@@ -1,4 +1,4 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -22,16 +22,65 @@
             </ul>
         </header>
     </div>
-    <div class="main-block">
-      <form action="/update/<%= note.id %>" method="post">
-        <div class="info">
-            <input class="isbn" type="text" name="isbn" value="<%= note.isbn %>" placeholder="isbn">
-            <input type="text" name="title" value="<%= note.title %>" placeholder="title">
-            <label for="note">Your Notes:</label>
-            <textarea id="note" name="note" rows="4" cols="50" placeholder="Note"><%= note.note %></textarea>
+
+    <main class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8">
+                <div class="card shadow-sm mb-5">
+                    <div class="card-body">
+                        <h1 class="h4 mb-3">Update note</h1>
+                        <p class="text-muted mb-4">
+                            Edit the book information or your notes. Changes will be saved for this entry only.
+                        </p>
+
+                        <form action="/update/<%= note.id %>" method="post">
+                            <div class="mb-3">
+                                <label for="isbn" class="form-label">ISBN</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="isbn"
+                                    name="isbn"
+                                    value="<%= note.isbn %>"
+                                    placeholder="978…"
+                                    required
+                                >
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="title" class="form-label">Book title</label>
+                                <input
+                                    type="text"
+                                    class="form-control"
+                                    id="title"
+                                    name="title"
+                                    value="<%= note.title %>"
+                                    placeholder="Name of the book"
+                                    required
+                                >
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="note" class="form-label">Your notes</label>
+                                <textarea
+                                    class="form-control"
+                                    id="note"
+                                    name="note"
+                                    rows="5"
+                                    placeholder="Update your thoughts about this book"
+                                ><%= note.note %></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100">
+                                Save changes
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  </body>
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-Iu7rLq71lJZIe0xOrE7wBtOxfMhJzT2CPYqvZ1qLwoCydK4sqGJcGf7Sx0QK8z+4" crossorigin="anonymous"></script>
+</body>
 </html>
