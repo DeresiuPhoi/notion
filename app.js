@@ -50,7 +50,7 @@ app.post("/add", async(req,res)=>{
 })
 
 app.get("/about", (req, res) => {
-  res.render("add_note.ejs");
+  res.render("about.ejs");
 });
 
 app.get("/update/:id", async(req,res)=>{
