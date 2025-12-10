@@ -1,5 +1,3 @@
-This project is a simple web app for book notes by ISBN, built with Node.js, Express, EJS, and Bootstrap.
-
 ## Overview
 
 The application lets you create, view, edit, and delete personal notes about books.  
@@ -43,3 +41,7 @@ This is a small pet project created to practice:
 - using EJS templates and server-side rendering;  
 - responsive UI with Bootstrap;  
 - integrating an external book cover service using ISBN.
+
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/81003d74-bde8-4a7a-944e-0323591fe467" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/7c3611f3-4231-4a4c-af5f-142ec2fad2e5" />
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/e0904c22-c232-4019-9581-597c8b826c4f" />
